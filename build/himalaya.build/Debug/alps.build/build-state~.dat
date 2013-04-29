@@ -1,0 +1,62 @@
+Talps
+v5
+r1
+cCheck dependencies
+cCompileC build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.o /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c0000000051437A5700000000000000AA
+t1363376727
+s170
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/../ealib/build/Debug/libea.a
+c0000000051475E1500000000018603C0
+t1363631637
+s25560000
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/alps
+t2
+s0
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.LinkFileList
+c0000000051484AEB0000000000000074
+t1363692267
+s116
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.o
+t2
+s0
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp
+c00000000514849380000000000000B2A
+t1363691832
+s2858
+
+CBuild AST from /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies92ccb26b82f8b641^1020b36b82f8b641^---0#1#0#--18"Check dependencies36"BEA49C50-2774-4710-99CA-20707FB3FE0E-
+
+CCompileC build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.o /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s385385067.701548
+e385385072.113396
+r0
+xCompileC
+xbuild/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.o
+x/Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp:14:
+o../ealib/libea/include/ea/alps.h:25:10: fatal error: 'boost/accumulators/statistics/stats.h pp' file not found
+o#include <boost/accumulators/statistics/stats.h pp>
+o         ^
+o1 error generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Compile /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp79b2b36b82f8b641^44dd237082f8b641^-281"In file included from /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp:14:../ealib/libea/include/ea/alps.h:25:10: fatal error: 'boost/accumulators/statistics/stats.h pp' file not found#include <boost/accumulators/statistics/stats.h pp>         ^1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@57"'boost/accumulators/statistics/stats.h pp' file not found-385385072#18446744073709551615#0#1(2@87"In file included from /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp:14:-385385072#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@77"file://localhost/Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp0000000000000000^13#9#13#9#468#0#21"Clang LLVM 1.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@85"file://localhost/Users/hjg/Desktop/research/projects/ea/ealib/libea/include/ea/alps.h0000000000000000^24#9#24#9#861#0#29"Lexical or Preprocessor Issue--0#0#0#-19%DVTDocumentLocation4@77"file://localhost/Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp0000000000000000^2186"CompileC build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.o src/alps.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hjg/Desktop/research/projects/ea/himalaya    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/include -I../ealib/libea/include -I../ealib/libmkv/include -I../ealib/libnn/include -I/Users/hjg/include -I/usr/local/include -I/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/DerivedSources/x86_64 -I/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/DerivedSources -Wno-parentheses -F/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug -MMD -MT dependencies -MF /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.d --serialize-diagnostics /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.dia -c /Users/hjg/Desktop/research/projects/ea/himalaya/src/alps.cpp -o /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/alps.build/Objects-normal/x86_64/alps.o36"BEBB9603-2A26-4536-B174-F377D1EEA28F-
+
+CLd /Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/alps normal x86_64
+r0
+

@@ -1,0 +1,66 @@
+Thfc
+v5
+r1
+cCheck dependencies
+cCompileC build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.o /Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/hfc normal x86_64
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c0000000051437A5700000000000000AA
+t1363376727
+s170
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/../ealib/build/Debug/libea.a
+c000000005147540D00000000018603C0
+t1363629069
+s25560000
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/hfc
+t2
+s0
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.LinkFileList
+c000000005147540E0000000000000072
+t1363629070
+s114
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.o
+t2
+s0
+
+N/Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp
+c00000000514701DF0000000000000B2F
+t1363608031
+s2863
+
+CBuild AST from /Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies780d068e8bf7b641^a051068e8bf7b641^---0#1#0#--18"Check dependencies36"92E76384-5EC0-4B5A-8FF6-7EA6376CE36F-
+
+CCompileC build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.o /Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s385321870.026295
+e385321877.917852
+r1
+xCompileC
+xbuild/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.o
+x/Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Compile /Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp4ed0068e8bf7b641^dd61eb958bf7b641^---0#0#0#-19%DVTDocumentLocation2@76"file://localhost/Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp0000000000000000^2154"CompileC build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.o src/hfc.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/hjg/Desktop/research/projects/ea/himalaya    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -DDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/include -I../ealib/libea/include -I../ealib/libmkv/include -I../ealib/libnn/include -I/Users/hjg/include -I/usr/local/include -I/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/DerivedSources/x86_64 -I/Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/DerivedSources -Wno-parentheses -F/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug -MMD -MT dependencies -MF /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.d --serialize-diagnostics /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.dia -c /Users/hjg/Desktop/research/projects/ea/himalaya/src/hfc.cpp -o /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.o36"76E75BDB-98C1-4F31-9D40-5FE0EC56264E-
+
+CLd /Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/hfc normal x86_64
+s385321877.924797
+e385321878.193299
+r1
+xLd
+x/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/hfc
+xnormal
+xx86_64
+old: warning: direct access in boost::any::holder<std::string>::type() const to global weak symbol typeinfo for std::string means the weak symbol cannot be overridden at runtime. This was likely caused by different translation units being compiled with different visibility settings.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection69"Link /Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/hfc77d8ec958bf7b641^2d7c31968bf7b641^-283"ld: warning: direct access in boost::any::holder<std::string>::type() const to global weak symbol typeinfo for std::string means the weak symbol cannot be overridden at runtime. This was likely caused by different translation units being compiled with different visibility settings.1(21%IDEActivityLogMessage2@269"Direct access in boost::any::holder<std::string>::type() const to global weak symbol typeinfo for std::string means the weak symbol cannot be overridden at runtime. This was likely caused by different translation units being compiled with different visibility settings.-385321878#0#283#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#32"Apple Mach-O Linker (ld) Warning--0#0#0#--911"Ld build/Debug/hfc normal x86_64    cd /Users/hjg/Desktop/research/projects/ea/himalaya    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug -L/Users/hjg/lib -L/usr/local/lib -L/Users/hjg/Desktop/research/projects/ea/himalaya/../ealib/build/Debug -F/Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug -filelist /Users/hjg/Desktop/research/projects/ea/himalaya/build/himalaya.build/Debug/hfc.build/Objects-normal/x86_64/hfc.LinkFileList -mmacosx-version-min=10.8 -lboost_iostreams -lboost_program_options -lboost_regex -lboost_serialization -lboost_signals -lea -o /Users/hjg/Desktop/research/projects/ea/himalaya/build/Debug/hfc36"CA004F2E-AA97-47EC-9385-AB264F4868FE-
+
