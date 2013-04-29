@@ -12,3 +12,12 @@ exe hfc :
 ;
 
 install dist : hfc : <location>$(HOME)/bin ;
+
+exe alps :
+    src/alps.cpp
+    /libea//libea
+    /libea//libea_runner
+    : <link>static
+;
+
+install dist : alps : <location>$(HOME)/bin ;
