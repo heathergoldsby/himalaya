@@ -15,7 +15,7 @@
 #include <ea/meta_population.h>
 #include <ea/fitness_functions/benchmarks.h>
 
-using namespace ea;
+using namespace ealib;
 
 template <typename EA>
 struct configuration : public abstract_configuration<EA> {
@@ -94,6 +94,7 @@ public:
         add_event<adaptive_hfc>(this, ea);
         add_event<adaptive_hfc_datafile>(this, ea);
         add_event<datafiles::meta_population_fitness>(this, ea);
+        add_event<datafiles::meta_population_fitness_evaluations>(this, ea);
     };
 };
 LIBEA_CMDLINE_INSTANCE(mea_type, cli);
