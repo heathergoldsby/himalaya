@@ -11,9 +11,10 @@
 #include <ea/representations/numeric_vector.h>
 #include <ea/cmdline_interface.h>
 #include <ea/algorithm.h>
-#include <ea/adaptive_hfc.h>
 #include <ea/meta_population.h>
 #include <ea/fitness_functions/benchmarks.h>
+#include <ea/generational_models/qhfc.h>
+
 
 using namespace ealib;
 
@@ -21,19 +22,28 @@ template <typename EA>
 struct configuration : public abstract_configuration<EA> {
     //! Called to generate the initial EA population.
     void initial_population(EA& ea) {
-        generate_ancestors(ancestors::uniform_integer(), get<POPULATION_SIZE>(ea), ea);
+        generate_ancestors(ancestors::uniform_real(), get<POPULATION_SIZE>(ea), ea);
+    }
+    
+    //! Called to fill a population to capacity.
+    void fill_population(EA& ea) {
+        generate_ancestors(ancestors::uniform_real(), get<POPULATION_SIZE>(ea)-ea.size(), ea);
+    }
+    
+    void configure(EA& ea) {
+        add_event<datafiles::fitness_evaluations>(this, ea);
     }
 };
 
 
 //! Evolutionary algorithm definition.
 typedef evolutionary_algorithm<
-intstring,
-mutation::per_site<mutation::uniform_integer>,
+realstring,
+mutation::per_site<mutation::uniform_real>,
 benchmarks,
 configuration,
 recombination::two_point_crossover, // recombination operator
-generational_models::steady_state<selection::proportionate< >, selection::elitism<selection::random> >
+generational_models::deterministic_crowding< >
 > ea_type;
 
 
@@ -46,7 +56,7 @@ struct mp_configuration : public abstract_configuration<EA> {
     }
 };
 
-typedef meta_population<ea_type, mp_configuration> mea_type;
+typedef meta_population<ea_type, mp_configuration, generational_models::qhfc> mea_type;
 
 
 /*! Define the EA's command-line interface.
@@ -58,20 +68,18 @@ public:
         // ea options
         add_option<META_POPULATION_SIZE>(this);
         add_option<REPRESENTATION_SIZE>(this);
-        add_option<INITIALIZATION_PERIOD>(this);
-        add_option<EXCHANGE_INDIVIDUALS_PERIOD>(this);
-        add_option<ADMISSION_UPDATE_PERIOD>(this);
-        add_option<MIN_REMAIN>(this);
         
         add_option<POPULATION_SIZE>(this);
         add_option<REPLACEMENT_RATE_P>(this);
+        add_option<TOURNAMENT_SELECTION_N>(this);
+        add_option<TOURNAMENT_SELECTION_K>(this);
         add_option<ELITISM_N>(this);
         
         add_option<MUTATION_GENOMIC_P>(this);
         add_option<MUTATION_PER_SITE_P>(this);
-        add_option<MUTATION_UNIFORM_INT_MIN>(this);
-        add_option<MUTATION_UNIFORM_INT_MAX>(this);
-
+        add_option<MUTATION_UNIFORM_REAL_MIN>(this);
+        add_option<MUTATION_UNIFORM_REAL_MAX>(this);
+        
         add_option<RUN_UPDATES>(this);
         add_option<RUN_EPOCHS>(this);
         add_option<CHECKPOINT_OFF>(this);
@@ -81,18 +89,18 @@ public:
         add_option<ANALYSIS_OUTPUT>(this);
         
         add_option<BENCHMARKS_FUNCTION>(this);
-        
-    
-        
-
+        add_option<QHFC_BREED_TOP_FREQ>(this);
+        add_option<QHFC_DETECT_EXPORT_NUM>(this);
+        add_option<QHFC_PERCENT_REFILL>(this);
+        add_option<QHFC_CATCHUP_GEN>(this);
+        add_option<QHFC_NO_PROGRESS_GEN>(this);
     }
     
     virtual void gather_tools() {
     }
     
     virtual void gather_events(EA& ea) {
-        add_event<adaptive_hfc>(this, ea);
-        add_event<adaptive_hfc_datafile>(this, ea);
+        add_event<datafiles::qhfc>(this, ea);
         add_event<datafiles::meta_population_fitness>(this, ea);
         add_event<datafiles::meta_population_fitness_evaluations>(this, ea);
     };
