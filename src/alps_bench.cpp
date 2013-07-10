@@ -8,13 +8,12 @@
 #include <ea/selection/random.h>
 #include <ea/generational_models/steady_state.h>
 #include <ea/datafiles/fitness.h>
-#include <ea/representations/numeric_vector.h>
+#include <ea/representations/realstring.h>
 #include <ea/cmdline_interface.h>
 #include <ea/algorithm.h>
+#include <ea/alps.h>
 #include <ea/meta_population.h>
 #include <ea/fitness_functions/benchmarks.h>
-#include <ea/generational_models/qhfc.h>
-
 
 using namespace ealib;
 
@@ -23,11 +22,6 @@ struct configuration : public abstract_configuration<EA> {
     //! Called to generate the initial EA population.
     void initial_population(EA& ea) {
         generate_ancestors(ancestors::uniform_real(), get<POPULATION_SIZE>(ea), ea);
-    }
-    
-    //! Called to fill a population to capacity.
-    void fill_population(EA& ea) {
-        generate_ancestors(ancestors::uniform_real(), get<POPULATION_SIZE>(ea)-ea.size(), ea);
     }
     
     void configure(EA& ea) {
@@ -43,7 +37,7 @@ mutation::per_site<mutation::uniform_real>,
 benchmarks,
 configuration,
 recombination::two_point_crossover, // recombination operator
-generational_models::deterministic_crowding< >
+generational_models::steady_state<selection::tournament< >, selection::elitism<selection::random> >
 > ea_type;
 
 
@@ -56,7 +50,7 @@ struct mp_configuration : public abstract_configuration<EA> {
     }
 };
 
-typedef meta_population<ea_type, mp_configuration, generational_models::qhfc> mea_type;
+typedef meta_population<ea_type, mp_configuration> mea_type;
 
 
 /*! Define the EA's command-line interface.
@@ -69,6 +63,11 @@ public:
         add_option<META_POPULATION_SIZE>(this);
         add_option<REPRESENTATION_SIZE>(this);
         
+        add_option<GM_AGE>(this);
+        add_option<ADMISSION_AGE>(this);
+        add_option<GAP_SIZE>(this);
+        add_option<ADMISSION_AGING_SCHEME>(this);
+
         add_option<POPULATION_SIZE>(this);
         add_option<REPLACEMENT_RATE_P>(this);
         add_option<TOURNAMENT_SELECTION_N>(this);
@@ -89,18 +88,14 @@ public:
         add_option<ANALYSIS_OUTPUT>(this);
         
         add_option<BENCHMARKS_FUNCTION>(this);
-        add_option<QHFC_BREED_TOP_FREQ>(this);
-        add_option<QHFC_DETECT_EXPORT_NUM>(this);
-        add_option<QHFC_PERCENT_REFILL>(this);
-        add_option<QHFC_CATCHUP_GEN>(this);
-        add_option<QHFC_NO_PROGRESS_GEN>(this);
     }
     
     virtual void gather_tools() {
     }
     
     virtual void gather_events(EA& ea) {
-        add_event<datafiles::qhfc>(this, ea);
+        add_event<alps>(this, ea);
+        add_event<alps_datafile>(this, ea);
         add_event<datafiles::meta_population_fitness>(this, ea);
         add_event<datafiles::meta_population_fitness_evaluations>(this, ea);
     };

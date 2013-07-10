@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4292B3E316252344007F1B2C"
-               BuildableName = "all"
-               BlueprintName = "all"
+               BlueprintIdentifier = "4234C42D178CEC990078BD85"
+               BuildableName = "himalaya-alps-nk"
+               BlueprintName = "himalaya-alps-nk"
                ReferencedContainer = "container:himalaya.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,16 +29,41 @@
       buildConfiguration = "Debug">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4234C42D178CEC990078BD85"
+            BuildableName = "himalaya-alps-nk"
+            BlueprintName = "himalaya-alps-nk"
+            ReferencedContainer = "container:himalaya.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
+      useCustomWorkingDirectory = "YES"
+      customWorkingDirectory = "/Users/dk/Documents/repositories/research.hg/src/himalaya/expr/001-alps/config"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4234C42D178CEC990078BD85"
+            BuildableName = "himalaya-alps-nk"
+            BlueprintName = "himalaya-alps-nk"
+            ReferencedContainer = "container:himalaya.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-c alps-nk.cfg --ea.rng.seed=1 --with-time"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -48,6 +73,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4234C42D178CEC990078BD85"
+            BuildableName = "himalaya-alps-nk"
+            BlueprintName = "himalaya-alps-nk"
+            ReferencedContainer = "container:himalaya.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

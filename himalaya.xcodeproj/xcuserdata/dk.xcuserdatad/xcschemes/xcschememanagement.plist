@@ -7,41 +7,51 @@
 		<key>all.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>39</integer>
 		</dict>
-		<key>alps_sharpe.xcscheme</key>
+		<key>himalaya-alps-bench.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>42</integer>
 		</dict>
-		<key>hfc_sharpe.xcscheme</key>
+		<key>himalaya-alps-nk.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>43</integer>
 		</dict>
-		<key>island_sharpe.xcscheme</key>
+		<key>himalaya-bench.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>44</integer>
 		</dict>
-		<key>jimmy.xcscheme</key>
+		<key>himalaya-nk.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>45</integer>
 		</dict>
-		<key>jimmy_test.xcscheme</key>
+		<key>himalaya-qhfc-bench.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>40</integer>
 		</dict>
-		<key>sharpe.xcscheme</key>
+		<key>himalaya-qhfc-nk.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>41</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>3E7708D616F73701005F9459</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3EB67EEB16F8821D00111A41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3EEDD1181549889B00B55C66</key>
 		<dict>
 			<key>primary</key>
@@ -63,6 +73,26 @@
 			<true/>
 		</dict>
 		<key>422801B5150408B500A9DFF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4234C40C178C359F0078BD85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4234C423178CEC890078BD85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4234C42D178CEC990078BD85</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4234C437178CECAD0078BD85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
