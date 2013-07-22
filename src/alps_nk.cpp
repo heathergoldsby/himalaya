@@ -33,7 +33,7 @@ struct configuration : public abstract_configuration<EA> {
 //! Evolutionary algorithm definition.
 typedef evolutionary_algorithm<
 bitstring,
-mutation::per_site<mutation::bitflip>,
+mutation::operators::per_site<mutation::site::bitflip>, // mutation operator
 nk_model< >,
 configuration,
 recombination::two_point_crossover,

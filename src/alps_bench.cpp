@@ -33,7 +33,7 @@ struct configuration : public abstract_configuration<EA> {
 //! Evolutionary algorithm definition.
 typedef evolutionary_algorithm<
 realstring,
-mutation::per_site<mutation::uniform_real>,
+mutation::operators::per_site<mutation::site::uniform_real>, // mutation operator
 benchmarks,
 configuration,
 recombination::two_point_crossover, // recombination operator

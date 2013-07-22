@@ -60,7 +60,7 @@ struct configuration : public abstract_configuration<EA> {
 
 typedef evolutionary_algorithm<
 bitstring,
-mutation::per_site<mutation::bitflip>,
+mutation::operators::per_site<mutation::site::bitflip>, // mutation operator
 nk_model< >,
 configuration, // user-defined configuration methods
 recombination::two_point_crossover, // recombination operator
