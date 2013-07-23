@@ -7,6 +7,7 @@
 #include <ea/selection/elitism.h>
 #include <ea/selection/random.h>
 #include <ea/generational_models/steady_state.h>
+#include <ea/datafiles/evaluations.h>
 #include <ea/datafiles/fitness.h>
 #include <ea/representations/realstring.h>
 #include <ea/cmdline_interface.h>
@@ -28,10 +29,6 @@ struct configuration : public abstract_configuration<EA> {
     //! Called to fill a population to capacity.
     void fill_population(EA& ea) {
         generate_ancestors(ancestors::uniform_real(), get<POPULATION_SIZE>(ea)-ea.size(), ea);
-    }
-    
-    void configure(EA& ea) {
-        add_event<datafiles::fitness_evaluations>(this, ea);
     }
 };
 

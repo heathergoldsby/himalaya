@@ -33,7 +33,6 @@
 #include <ea/attributes.h>
 
 LIBEA_MD_DECL(HIMALAYA_MUTATION_RATE, "himalaya.mutation_rate", double);
-LIBEA_MD_DECL(HIMALAYA_MUTATION_RATE_OFF, "himalaya.mutation_rate.off", double);
 
 /*! Per-site mutation.
  */
@@ -45,7 +44,7 @@ struct himalaya_per_site {
     template <typename EA>
     void operator()(typename EA::individual_type& ind, EA& ea) {
         typename EA::representation_type& repr=ind.repr();
-        const double per_site_p=get<MUTATION_PER_SITE_P>(ea); //, 0.0, 1.0);// * get<HIMALAYA_MUTATION_RATE>(ind,1.0), 0.0, 1.0);
+        const double per_site_p=get<MUTATION_PER_SITE_P>(ea);
         for(typename EA::representation_type::iterator i=repr.begin(); i!=repr.end(); ++i){
             if(ea.rng().p(per_site_p)) {
                 _mt(repr, i, ea);
@@ -65,7 +64,7 @@ struct himalaya_inheritance : inheritance_event<EA> {
     virtual void operator()(typename EA::population_type& parents,
                             typename EA::individual_type& offspring,
                             EA& ea) {
-        put<HIMALAYA_MUTATION_RATE>(get<HIMALAYA_MUTATION_RATE_OFF>(**parents.begin(),1.0), offspring);
+        //        put<HIMALAYA_MUTATION_RATE>(get<HIMALAYA_MUTATION_RATE_OFF>(**parents.begin(),1.0), offspring);
     }
 };
 
@@ -128,24 +127,15 @@ template <typename EA>
 struct himalaya_datafile : ealib::record_statistics_event<EA> {
     himalaya_datafile(EA& ea) : ealib::record_statistics_event<EA>(ea), _df("himalaya.dat") {
         _df.add_field("update")
-        .add_field("mu"); // mutation rate
-//        .add_field("imu");
+        .add_field("mu");
     }
     
     virtual ~himalaya_datafile() {
     }
     
     virtual void operator()(EA& ea) {
-        using namespace boost::accumulators;
-        
-//        accumulator_set<double, stats<tag::mean> > imu;
-//        
-//        for(typename EA::population_type::iterator i=ea.population().begin(); i!=ea.population().end(); ++i) {
-//            imu(get<HIMALAYA_MUTATION_RATE>(**i));
-//        }
-        
         _df.write(ea.current_update())
-        .write(get<MUTATION_PER_SITE_P>(ea)).endl(); //write(mean(imu))
+        .write(get<MUTATION_PER_SITE_P>(ea)).endl();
     }
     
     ealib::datafile _df;

@@ -7,6 +7,7 @@
 #include <ea/selection/elitism.h>
 #include <ea/selection/random.h>
 #include <ea/generational_models/steady_state.h>
+#include <ea/datafiles/evaluations.h>
 #include <ea/datafiles/fitness.h>
 #include <ea/representations/bitstring.h>
 #include <ea/cmdline_interface.h>
@@ -22,10 +23,6 @@ struct configuration : public abstract_configuration<EA> {
     //! Called to generate the initial EA population.
     void initial_population(EA& ea) {
         generate_ancestors(ancestors::random_bitstring(), get<POPULATION_SIZE>(ea), ea);
-    }
-    
-    void configure(EA& ea) {
-        add_event<datafiles::fitness_evaluations>(this, ea);
     }
 };
 
