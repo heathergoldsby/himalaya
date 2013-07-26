@@ -9,6 +9,7 @@
 #include <ea/generational_models/steady_state.h>
 #include <ea/datafiles/evaluations.h>
 #include <ea/datafiles/fitness.h>
+#include <ea/datafiles/population_entropy.h>
 #include <ea/representations/bitstring.h>
 #include <ea/cmdline_interface.h>
 #include <ea/algorithm.h>
@@ -100,6 +101,7 @@ public:
     
     virtual void gather_events(EA& ea) {
         add_event<datafiles::qhfc>(this, ea);
+        add_event<datafiles::meta_population_entropy>(this, ea);
         add_event<datafiles::meta_population_fitness>(this, ea);
         add_event<datafiles::meta_population_fitness_evaluations>(this, ea);
     };

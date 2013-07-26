@@ -17,35 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <ea/evolutionary_algorithm.h>
-#include <ea/representations/realstring.h>
-#include <ea/cmdline_interface.h>
-#include <ea/datafiles/fitness.h>
-#include <ea/line_of_descent.h>
-
-using namespace ealib;
 #include "himalaya.h"
-
-#include <sstream>
-#include <boost/lexical_cast.hpp>
-#include <ea/evolutionary_algorithm.h>
-#include <ea/fitness_function.h>
-#include <ea/selection/proportionate.h>
-#include <ea/selection/tournament.h>
-#include <ea/selection/elitism.h>
-#include <ea/selection/random.h>
-#include <ea/generational_models/steady_state.h>
-#include <ea/datafiles/evaluations.h>
-#include <ea/datafiles/fitness.h>
-#include <ea/representations/numeric_vector.h>
-#include <ea/cmdline_interface.h>
-#include <ea/algorithm.h>
-#include <ea/meta_population.h>
-#include <ea/fitness_functions/benchmarks.h>
-#include <ea/generational_models/qhfc.h>
-
-
-using namespace ealib;
 
 template <typename EA>
 struct configuration : public abstract_configuration<EA> {
@@ -61,7 +33,7 @@ mutation::operators::per_site<mutation::site::uniform_real>, // mutation operato
 benchmarks,
 configuration, // user-defined configuration methods
 recombination::two_point_crossover, // recombination operator
-generational_models::steady_state<selection::proportionate< >, selection::elitism<selection::tournament< > > >, // generational model
+generational_models::steady_state<selection::proportionate< >, selection::elitism<selection::random> >, // generational model
 attr::default_attributes, // individual attributes
 individual_lod // using an lod individual automatically turns on LOD tracking.
 > ea_type;
@@ -100,11 +72,16 @@ public:
     
     //! Define events (e.g., datafiles) here.
     virtual void gather_events(EA& ea) {
-        add_event<datafiles::fitness>(this, ea);
-        add_event<datafiles::fitness_evaluations>(this, ea);
         add_event<himalaya>(this,ea);
         add_event<himalaya_datafile>(this,ea);
+        add_event<datafiles::fitness>(this, ea);
+        add_event<datafiles::fitness_evaluations>(this, ea);
+        add_event<datafiles::population_entropy>(this, ea);
     };
+    
+    virtual void gather_tools() {
+        add_tool<landscape_data>(this);
+    }
 };
 
 LIBEA_CMDLINE_INSTANCE(ea_type, cli);

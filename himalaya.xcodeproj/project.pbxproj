@@ -165,6 +165,7 @@
 		4234C442178CED360078BD85 /* himalaya_nk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = himalaya_nk.cpp; sourceTree = "<group>"; };
 		4234C443178CED360078BD85 /* qhfc_nk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = qhfc_nk.cpp; sourceTree = "<group>"; };
 		4234C44E178CF0FB0078BD85 /* libea.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libea.a; path = ../DerivedData/research/Build/Products/Debug/libea.a; sourceTree = "<group>"; };
+		4259F68F17A2B56100132687 /* analysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = analysis.h; sourceTree = "<group>"; };
 		426D350F14EFD1180051BB50 /* himalaya.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = himalaya.xcconfig; sourceTree = "<group>"; };
 		4292B4131625242E007F1B2C /* alps.cfg */ = {isa = PBXFileReference; lastKnownFileType = text; path = alps.cfg; sourceTree = "<group>"; };
 		42DA11981666BB0300F8AFEB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -252,6 +253,7 @@
 		42841D1115B24F5C00AB18BE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4259F68F17A2B56100132687 /* analysis.h */,
 				3EB67EE916F8803700111A41 /* alps_bench.cpp */,
 				4234C441178CED360078BD85 /* alps_nk.cpp */,
 				4234C408178C32080078BD85 /* himalaya.h */,

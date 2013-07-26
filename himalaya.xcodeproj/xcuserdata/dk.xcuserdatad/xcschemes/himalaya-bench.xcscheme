@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "/Users/dk/Documents/repositories/research.hg/src/himalaya/expr/003-himalaya/config"
+      customWorkingDirectory = "/Users/dk/Documents/repositories/research.hg/src/himalaya/tmp"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
@@ -60,7 +60,11 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-c himalaya.cfg --ea.rng.seed=1 --with-time"
+            argument = "-c ../etc/himalaya.cfg --ea.rng.seed=1 --with-time"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "--analyze landscape_data"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

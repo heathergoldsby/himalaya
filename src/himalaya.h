@@ -26,11 +26,31 @@
 #include <boost/accumulators/statistics/mean.hpp>
 #include <boost/accumulators/statistics/max.hpp>
 #include <boost/accumulators/statistics/min.hpp>
+
+#include <ea/evolutionary_algorithm.h>
+#include <ea/representations/realstring.h>
+#include <ea/representations/bitstring.h>
+#include <ea/cmdline_interface.h>
+#include <ea/line_of_descent.h>
+#include <ea/selection/proportionate.h>
+#include <ea/selection/tournament.h>
+#include <ea/selection/elitism.h>
+#include <ea/selection/random.h>
+#include <ea/generational_models/steady_state.h>
+#include <ea/datafiles/evaluations.h>
+#include <ea/datafiles/fitness.h>
+#include <ea/datafiles/population_entropy.h>
+#include <ea/fitness_functions/benchmarks.h>
+#include <ea/fitness_functions/nk_model.h>
 #include <ea/events.h>
 #include <ea/algorithm.h>
 #include <ea/analysis.h>
 #include <ea/datafile.h>
 #include <ea/attributes.h>
+
+#include "analysis.h"
+using namespace ealib;
+
 
 LIBEA_MD_DECL(HIMALAYA_MUTATION_RATE, "himalaya.mutation_rate", double);
 
