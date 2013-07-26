@@ -44,7 +44,7 @@ struct landscape_data : public ealib::analysis::unary_function<EA> {
         datafile df("landscape_data.dat");
         df.add_field("fitness");
         
-        for(std::size_t i=0; i<get<REPRESENTATION_SIZE>(ea); ++i) {
+        for(int i=0; i<get<REPRESENTATION_SIZE>(ea); ++i) {
             df.add_field("site" + boost::lexical_cast<std::string>(i));
         }
         
